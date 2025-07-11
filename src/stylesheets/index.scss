@@ -1,5 +1,15 @@
-.navbar {
+.navcontainer {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+
+    .leftnav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 60%;
+    }
 }
+
