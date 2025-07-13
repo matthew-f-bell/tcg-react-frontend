@@ -1,54 +1,39 @@
 import React from 'react';
 import Tcgcard from '../TcgCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import * as onePieceService from "../../api/onepiece.service";
 
 
-function createInitialCards() {
-  const initialCardDisplay = [];
-  for (let i = 0; i < 5; i++) {
-    initialCardDisplay.push({
-      id: i,
-      card: <Tcgcard />
-    });
-  }
-  return initialCardDisplay;
-}
 
 // Home Page Component
 function Home() {
-  const [cards, setCards] = useState(createInitialCards());
+  const [cards, setCards] = useState([]);
+
+  const getCards = async () => {
+    await onePieceService.getLuffy().then((res) => {
+//      setCards(res.data)
+      console.log(res)
+    })
+
+  };
+
+  useEffect(() => {
+    getCards()
+  }, []);
 
   return(
     <>
       <h1>Test</h1>
-      <button onClick={() => {
-        setCards([
-          {
-            id: cards.length,
-            card: <Tcgcard />
-          }, ...cards]);
-      }}>
-        Increment Component  
-      </button>
-      <button onClick={() => {
-        setCards([
-          {
-            id: cards.length,
-            card: <Tcgcard />
-          }, ...cards]);
-      }}>        Decrement Component
-      </button>
-      <div class="card-container">
-        {
-          cards.map(item => (
-            <div key={item.id}>
-              {<Tcgcard />}
-            </div>
-          ))
-        }
-      </div>
+      {cards.map((card) => {
+        return (
+          <>
+            <Tcgcard name={card.name} image={card.images.small} />
+          </>
+        )
+      })}
     </>
-  );
-}
+  )
+};
 
 export default Home;

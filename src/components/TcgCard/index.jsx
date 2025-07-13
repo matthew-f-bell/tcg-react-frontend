@@ -3,13 +3,13 @@ import React from 'react';
 import '../../stylesheets/index.scss';
 
 // Component for Cards
-function Tcgcard () {
+function Tcgcard (props) {
     return (
         <>
             <div class="tcg-card">
-                <img class="card-img" src="/assets/staticImages/placeholder_img.png" alt="" />
+                <img class="card-img" src={props.image} alt="" />
                 <div>
-                    Placeholder Text
+                    {props.name}
                 </div>
             </div>
         </>
