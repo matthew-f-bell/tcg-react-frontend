@@ -2,7 +2,8 @@ import React from 'react';
 import Tcgcard from '../TcgCard';
 import { useState, useEffect } from 'react';
 
-import * as onePieceService from "../../api/onepiece.service";
+
+import * as pokeService from "../../api/poke.service";
 
 
 
@@ -11,11 +12,9 @@ function Home() {
   const [cards, setCards] = useState([]);
 
   const getCards = async () => {
-    await onePieceService.getLuffy().then((res) => {
-//      setCards(res.data)
-      console.log(res)
+    await pokeService.getAllCards().then((res) => {
+      setCards(res.data)
     })
-
   };
 
   useEffect(() => {
@@ -28,7 +27,7 @@ function Home() {
       {cards.map((card) => {
         return (
           <>
-            <Tcgcard name={card.name} image={card.images.small} />
+            <Tcgcard id={card.localId} name={card.name} image={card.image} />
           </>
         )
       })}

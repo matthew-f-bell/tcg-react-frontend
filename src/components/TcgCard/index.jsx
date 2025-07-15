@@ -6,8 +6,8 @@ import '../../stylesheets/index.scss';
 function Tcgcard (props) {
     return (
         <>
-            <div class="tcg-card">
-                <img class="card-img" src={props.image} alt="" />
+            <div className="tcg-card" key={props.id}>
+                <img src={props.image} alt="" />
                 <div>
                     {props.name}
                 </div>
