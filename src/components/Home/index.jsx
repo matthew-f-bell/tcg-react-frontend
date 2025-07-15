@@ -21,16 +21,22 @@ function Home() {
     getCards()
   }, []);
 
+  const limitedCards = cards.slice(0,20);
+
   return(
     <>
       <h1>Test</h1>
-      {cards.map((card) => {
+      <div className="card-container">
+      {limitedCards.map((card) => {
         return (
           <>
-            <Tcgcard id={card.localId} name={card.name} image={card.image} />
+            <div key={card.Id}>
+              <Tcgcard name={card.name} image={card.image} />
+            </div>
           </>
         )
       })}
+      </div>
     </>
   )
 };

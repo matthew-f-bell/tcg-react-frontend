@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
-import Home from "../components/Home";
+import Navbar from "../../components/Navbar";
+import Home from "../../components/Home";
 
-import '../stylesheets/index.scss';
+import '../../stylesheets/index.scss';
 
 const Homepage = () => {
     return (

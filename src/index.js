@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import Homepage from './Home';
+import Homepage from './Pages/Home';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

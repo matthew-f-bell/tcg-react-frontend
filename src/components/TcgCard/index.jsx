@@ -4,10 +4,22 @@ import '../../stylesheets/index.scss';
 
 // Component for Cards
 function Tcgcard (props) {
+    let logoURL = "";
+
+
+    if (props.image === undefined) {
+        logoURL = "public/assets/staticImages/placeholder_img.png";
+        console.log(logoURL);
+    }
+    if (props.image !== undefined) {
+        logoURL = props.image+"/high.jpg";
+        console.log(logoURL);
+    }
+
     return (
         <>
-            <div className="tcg-card" key={props.id}>
-                <img src={props.image} alt="" />
+            <div className="tcg-card">
+                <img className="card-img" src={logoURL} alt="" />
                 <div>
                     {props.name}
                 </div>

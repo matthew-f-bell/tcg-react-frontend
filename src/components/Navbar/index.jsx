@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../stylesheets/index.scss';
 
 // Navbar Component
 function Navbar() {
   return(
+/*---------------------------------------------------
     <div className="navcontainer">
       <div className="leftnav">
         <div className="navbar" id="nav-home">
@@ -23,6 +25,13 @@ function Navbar() {
         </div>
       </div>
     </div>
+---------------------------------------------------*/
+    <nav className='navcontainer'>
+      <a href='/' className='navbar leftnav'>Home</a>
+      <a href='/series' className='navbar leftnav'>Series</a>
+      <a href='/decks' className='navbar leftnav'>Decks</a>
+      <a href='/profile' className='navbar rightnav'>Profile</a>
+    </nav>
   );
 }
 
