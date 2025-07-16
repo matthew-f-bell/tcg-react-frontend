@@ -1,3 +1,5 @@
+
+// Nav Bar Styles
 .navcontainer {
     display: flex;
     flex-flow: row nowrap;
@@ -15,6 +17,7 @@
     }
 }
 
+// TCG Card List Styles
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -35,5 +38,18 @@
     .card-img {
         max-width: 100px;
         justify-content: center;
+    }
+}
+
+// Series List Styles
+.series-container {
+    display: flex;
+    justify-content: space-around;
+
+    .series-card {
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+
     }
 }

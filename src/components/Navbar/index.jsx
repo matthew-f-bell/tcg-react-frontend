@@ -33,6 +33,6 @@ function Navbar() {
       <a href='/profile' className='navbar rightnav'>Profile</a>
     </nav>
   );
-}
+};
 
 export default Navbar;

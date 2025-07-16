@@ -1,15 +1,15 @@
 import Navbar from "../../components/Navbar";
-import Series from "../../components/Series";
+import PokeSets from "../../components/PokeSets";
 
 import '../../stylesheets/index.scss';
 
-const SeriesPage = () => {
+const SetsPage = () => {
     return (
         <>
             <Navbar />
-            <Series />
+            <PokeSets />
         </>
-    )
-}
-
-export default SeriesPage;
+    );
+};
+ 
+export default SetsPage;

@@ -1,34 +1,19 @@
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import * as pokeService from "../../api/poke.service";
-
-// Series Component
+// List of different TCG Series
 function Series() {
-    const [series, setSeries] = useState([]);
-
-    const getSeries = async () => {
-        await pokeService.getAllSets().then((res) => {
-            setSeries(res.data)
-        })
-    };
-
-    useEffect(() => {
-        getSeries()
-    }, []);
-
     return(
         <>
-            {series.map((serie) => {
-                return (
-                    <>
-                        <div key={serie.id}>
-                            {serie.name}
-                        </div>
-                    </>
-                )
-            })}
+            <div className='series-container'>
+                <div className="series-card">
+                    <Link to="/one-piece-sets">One Piece</Link>
+                </div>
+                <div className="series-card">
+                    <Link to="/pokemon-sets">Pokemon</Link>
+                </div>
+            </div>
         </>
-    )
+    );
 };
 
 export default Series;
