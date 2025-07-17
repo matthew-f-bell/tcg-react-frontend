@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-import * as pokeService from "../../api/poke.service";
+import * as oneService from "../../api/onepiece.service";
 
-// List of Different Pokemon Sets Within a Series Component
-function PokeSets() {
+// List of Different One Piece Sets Within a Series Component
+function OnePieceSets() {
     const [sets, setSets] = useState([]);
 
     const getSets = async () => {
-        await pokeService.getAllSets().then((res) => {
+        await oneService.getAllOnePieceCards().then((res) => {
             setSets(res.data)
         })
     };
@@ -31,4 +31,4 @@ function PokeSets() {
     )
 };
 
-export default PokeSets;
+export default OnePieceSets;

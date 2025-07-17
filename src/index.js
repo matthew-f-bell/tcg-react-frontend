@@ -4,7 +4,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './Pages/HomePage';
 import SeriesPage from './Pages/SeriesPage';
-import SetsPage from './Pages/SetsPage';
+import PokeSetsPage from './Pages/PokeSetsPage';
+import OnePieceSetsPage from './Pages/OneSetsPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/series" element={<SeriesPage />} />
-        <Route path="/pokemon-sets" element={<SetsPage />} />
+        <Route path="/pokemon-sets" element={<PokeSetsPage />} />
+        <Route path="/one-piece-sets" element={<OnePieceSetsPage />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

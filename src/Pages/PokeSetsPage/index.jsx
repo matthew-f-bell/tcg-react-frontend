@@ -3,7 +3,7 @@ import PokeSets from "../../components/PokeSets";
 
 import '../../stylesheets/index.scss';
 
-const SetsPage = () => {
+const PokeSetsPage = () => {
     return (
         <>
             <Navbar />
@@ -12,4 +12,4 @@ const SetsPage = () => {
     );
 };
  
-export default SetsPage;
+export default PokeSetsPage;
