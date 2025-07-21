@@ -7,7 +7,7 @@ function OnePieceSets() {
     const [sets, setSets] = useState([]);
 
     const getSets = async () => {
-        await oneService.getAllOnePieceCards().then((res) => {
+        await oneService.getAllOnePieceSets().then((res) => {
             setSets(res.data)
         })
     };

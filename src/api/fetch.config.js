@@ -1,25 +1,34 @@
-
+import axios from "axios";
 
 const X_API_KEY = process.env.REACT_APP_API_KEY;
 const API_URL = process.env.REACT_APP_ONE_API_URL;
 
-let onePieaceHeaders = new Headers({
-        'x-api-key': X_API_KEY,
-        'Content-Type': 'application/json'
+
+
+
+/*-----
+
+// url = 'https://apitcg.com/api/'
+
+const onePieceHeaders = new Headers({
+    'x-api-key': X_API_KEY,
+    'Content-Type': 'application/json'
 });
 
-async function getOne() {
-    const url = API_URL;
-    
-}
 
-/*----
+const onePieceResponse = await fetch(`${API_URL}one-piece`, {
+    headers: onePieceHeaders,
+})
+
+export default onePieceResponse;
+
+-----*/
+
 const getOne = axios.create({
-    baseURL: 'https://apitcg.com/api/',
+    baseURL: API_URL,
     headers: {
-        'x-api-key': X_API_KEY,
         'Content-Type': 'application/json'
     }
 });
 
-----*/
+export default getOne;
