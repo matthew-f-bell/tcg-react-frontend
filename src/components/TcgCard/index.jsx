@@ -9,11 +9,9 @@ function Tcgcard (props) {
 
     if (props.image === undefined) {
         logoURL = "public/assets/staticImages/placeholder_img.png";
-        console.log(logoURL);
     }
     if (props.image !== undefined) {
         logoURL = props.image+"/high.jpg";
-        console.log(logoURL);
     }
 
     return (

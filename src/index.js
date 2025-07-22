@@ -6,7 +6,7 @@ import Homepage from './Pages/HomePage';
 import SeriesPage from './Pages/SeriesPage';
 import PokeSetsPage from './Pages/PokeSetsPage';
 import OnePieceSetsPage from './Pages/OneSetsPage';
-
+import PokeSetCardsPage from './Pages/PokeSetCardsPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +17,7 @@ root.render(
         <Route path="/series" element={<SeriesPage />} />
         <Route path="/pokemon-sets" element={<PokeSetsPage />} />
         <Route path="/one-piece-sets" element={<OnePieceSetsPage />} />
+        <Route path="/pokemon-sets/:setID" element={<PokeSetCardsPage />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

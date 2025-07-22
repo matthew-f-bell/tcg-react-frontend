@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const X_API_KEY = process.env.REACT_APP_API_KEY;
+// const X_API_KEY = process.env.REACT_APP_API_KEY;
 const API_URL = process.env.REACT_APP_ONE_API_URL;
 
 

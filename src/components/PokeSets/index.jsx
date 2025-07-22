@@ -1,32 +1,10 @@
-import { useState, useEffect } from 'react';
-
-import * as pokeService from "../../api/poke.service";
-
 // List of Different Pokemon Sets Within a Series Component
-function PokeSets() {
-    const [sets, setSets] = useState([]);
-
-    const getSets = async () => {
-        await pokeService.getAllSets().then((res) => {
-            setSets(res.data)
-        })
-    };
-
-    useEffect(() => {
-        getSets()
-    }, []);
-
+function PokeSets(props) {
     return(
         <>
-            {sets.map((set) => {
-                return (
-                    <>
-                        <div key={set.id}>
-                            {set.name}
-                        </div>
-                    </>
-                )
-            })}
+            <div>
+                {props.name}
+            </div>
         </>
     )
 };
