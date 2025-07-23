@@ -1,6 +1,6 @@
 // Library Imports
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Component Imports
 import Navbar from "../../components/Navbar";
@@ -14,31 +14,37 @@ import '../../stylesheets/index.scss';
 
 // Page For Listing Cards Within a Specific Set
 function PokeSetCardsPage() {
+    // Setting Up Dynamic Routes
+    let { cardID } = useParams();
+
     // Get Set ID from Path
-    let pathArray = window.location.pathname.split('/');
+    let setPath = window.location.pathname.split('/');
 
     // Query API for Data on a Specific Set
-    const [sets, setSets] = useState([]);
+    const [setCards, setSetCards] = useState([]);
 
-    const getSets = async () => {
-        await pokeService.getSet(pathArray[2]).then((res) => {
-            setSets(res.data.cards)
+    const getSetCards = async () => {
+        await pokeService.getSet(setPath[2]).then((res) => {
+            setSetCards(res.data.cards)
         })
     };
 
     useEffect(() => {
-        getSets()
-    }, []);
+        getSetCards()
+    }, [cardID]);
 
     // Render Out Cards in the Set
     return (
         <>
             <Navbar />
             <div className="card-container">
-                {sets.map((set) => {
+                {setCards.map((setCard) => {
+                    let oneCardID = `/pokemon-card/${setCard.id}`;
                     return (
                         <>
-                            <PokeSetCards cards={set.cards} setCardName={set.name} setCardImage={set.image} />
+                            <Link to={oneCardID}>
+                                <PokeSetCards cardID={setCard.id} setCardName={setCard.name} setCardImage={setCard.image} />
+                            </Link>
                         </>
                     )
                 })}

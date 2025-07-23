@@ -14,7 +14,7 @@ import '../../stylesheets/index.scss';
 
 // Page For Listing All Sets Within a Series
 function PokeSetsPage() {
-    //Setting Up Dynamic Routes
+    // Setting Up Dynamic Routes
     let { setID } = useParams();
 
     // Getting List of Sets from API
