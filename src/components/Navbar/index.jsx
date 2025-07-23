@@ -9,10 +9,10 @@ import '../../stylesheets/index.scss';
 function Navbar() {
   return(
     <nav className='navcontainer'>
-      <a href='/' className='navbar leftnav'>Home</a>
-      <a href='/series' className='navbar leftnav'>Series</a>
-      <a href='/decks' className='navbar leftnav'>Decks</a>
-      <a href='/profile' className='navbar rightnav'>Profile</a>
+      <Link to='/' className='navbar leftnav'>Home</Link>
+      <Link to='/series' className='navbar leftnav'>Series</Link>
+      <Link to='/decks' className='navbar leftnav'>Decks</Link>
+      <Link to='/profile' className='navbar rightnav'>Profile</Link>
     </nav>
   );
 };

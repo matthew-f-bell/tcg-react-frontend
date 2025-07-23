@@ -10,6 +10,10 @@ const getAllCards = () => {
     return getPoke.get(`${cards}`);
 };
 
+const getCard = (id) => {
+    return getPoke.get(`${cards}/${id}`)
+}
+
 // Gets All Sets
 const getAllSets = () => {
     return getPoke.get(`${sets}`);
@@ -21,4 +25,4 @@ const getSet = (id) => {
 };
 
 
-export { getAllCards, getAllSets, getSet };
+export { getAllCards, getCard, getAllSets, getSet };
