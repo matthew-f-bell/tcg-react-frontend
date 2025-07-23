@@ -1,19 +1,22 @@
+// Library Imports
 import React from 'react';
 
+// Style Import
 import '../../stylesheets/index.scss';
 
 // Component for Cards
 function Tcgcard (props) {
     let logoURL = "";
 
-
+    // If Data Does Not Have an Image to Display, Display a Filler Image
     if (props.image === undefined) {
-        logoURL = "public/assets/staticImages/placeholder_img.png";
+        logoURL = "https://assets.tcgdex.net/en/base/base1/98/high.jpg";
     }
-    if (props.image !== undefined) {
+    else if (props.image !== undefined) {
         logoURL = props.image+"/high.jpg";
     }
 
+    // Render Out a Cards Name and Image
     return (
         <>
             <div className="tcg-card">

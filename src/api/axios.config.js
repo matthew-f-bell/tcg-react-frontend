@@ -9,6 +9,5 @@ const getPoke = axios.create({
     }
 });
 
-// 'https://api.tcgdex.net/v2/en/'
 
 export default getPoke;
