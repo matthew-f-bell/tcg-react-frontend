@@ -53,3 +53,21 @@
 
     }
 }
+
+// Single Card Details Styles
+.card-detail-container {
+    display: flex;
+    justify-content: center;
+    
+    .card-image-container {
+        border: 3px solid blue;
+    }
+
+    .card-details {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        border: 3px solid red;
+
+    }
+}

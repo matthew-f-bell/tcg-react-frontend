@@ -11,7 +11,7 @@ import * as pokeService from "../../api/poke.service";
 // Style Import
 import '../../stylesheets/index.scss';
 
-// Home Page Render
+// One Single Card Details Render Page
 const PokeSingleCardPage = () => {
     // Get Set ID from Path
     let cardPath = window.location.pathname.split('/');
@@ -28,6 +28,8 @@ const PokeSingleCardPage = () => {
         getCardDetails()
     }, []);
 
+    console.log(cardDetails);
+
     return (
         <>
             <Navbar />
@@ -41,6 +43,7 @@ const PokeSingleCardPage = () => {
                 stage={cardDetails.stage}
                 attacks={cardDetails.attacks}
                 weakness={cardDetails.weaknesses}
+                setDetails={cardDetails.set}
              />
         </>
     )

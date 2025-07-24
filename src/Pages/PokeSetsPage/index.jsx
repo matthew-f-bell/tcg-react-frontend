@@ -1,6 +1,5 @@
 // Library Imports
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
 
 // Component Imports
 import Navbar from "../../components/Navbar";
@@ -14,8 +13,6 @@ import '../../stylesheets/index.scss';
 
 // Page For Listing All Sets Within a Series
 function PokeSetsPage() {
-    // Setting Up Dynamic Routes
-    let { setID } = useParams();
 
     // Getting List of Sets from API
     const [sets, setSets] = useState([]);
@@ -28,20 +25,15 @@ function PokeSetsPage() {
 
     useEffect(() => {
         getSets()
-    }, [setID]);
-
-    
+    }, []);
 
     return (
         <>
             <Navbar />
             {sets.map((set) => {
-                let oneSetID = `/pokemon-sets/${set.id}`;
                 return (
                     <>
-                        <Link to={oneSetID}>
                             <PokeSets id={set.id} name={set.name} />
-                        </Link>
                     </>
                 )
             })}

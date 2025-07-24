@@ -1,6 +1,5 @@
 // Library Imports
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
 
 // Component Imports
 import Navbar from "../../components/Navbar";
@@ -14,9 +13,6 @@ import '../../stylesheets/index.scss';
 
 // Page For Listing Cards Within a Specific Set
 function PokeSetCardsPage() {
-    // Setting Up Dynamic Routes
-    let { cardID } = useParams();
-
     // Get Set ID from Path
     let setPath = window.location.pathname.split('/');
 
@@ -31,7 +27,7 @@ function PokeSetCardsPage() {
 
     useEffect(() => {
         getSetCards()
-    }, [cardID]);
+    }, []);
 
     // Render Out Cards in the Set
     return (
@@ -39,12 +35,9 @@ function PokeSetCardsPage() {
             <Navbar />
             <div className="card-container">
                 {setCards.map((setCard) => {
-                    let oneCardID = `/pokemon-card/${setCard.id}`;
                     return (
                         <>
-                            <Link to={oneCardID}>
                                 <PokeSetCards cardID={setCard.id} setCardName={setCard.name} setCardImage={setCard.image} />
-                            </Link>
                         </>
                     )
                 })}
