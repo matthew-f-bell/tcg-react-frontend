@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import Homepage from './Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './Pages/HomePage';
+import SeriesPage from './Pages/SeriesPage';
+import PokeSetsPage from './Pages/PokeSetsPage';
+import OnePieceSetsPage from './Pages/OneSetsPage';
+import PokeSetCardsPage from './Pages/PokeSetCardsPage';
+import PokeSingleCardPage from './Pages/PokeSingleCardPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/series" element={<SeriesPage />} />
+        <Route path="/pokemon-sets" element={<PokeSetsPage />} />
+        <Route path="/one-piece-sets" element={<OnePieceSetsPage />} />
+        <Route path="/pokemon-sets/:setID" element={<PokeSetCardsPage />} />
+        <Route path="/pokemon-card/:cardID" element={<PokeSingleCardPage />} />
+      </Routes>
     </React.StrictMode>
   </BrowserRouter>
 );

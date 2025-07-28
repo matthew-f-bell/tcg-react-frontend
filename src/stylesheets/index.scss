@@ -1,0 +1,72 @@
+
+// Nav Bar Styles
+.navcontainer {
+    display: flex;
+    flex-flow: row nowrap;
+    position: sticky;
+    padding: 10px;
+    top: 0;
+    justify-content: space-between;
+    background-color: white;
+
+    .leftnav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 60%;
+    }
+}
+
+// TCG Card List Styles
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 3px solid red;
+}
+
+.tcg-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 3px solid blue;
+    background-color: green;
+
+
+
+    .card-img {
+        justify-content: center;
+    }
+}
+
+// Series List Styles
+.series-container {
+    display: flex;
+    justify-content: space-around;
+
+    .series-card {
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+
+    }
+}
+
+// Single Card Details Styles
+.card-detail-container {
+    display: flex;
+    justify-content: center;
+    
+    .card-image-container {
+        border: 3px solid blue;
+    }
+
+    .card-details {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        border: 3px solid red;
+
+    }
+}
