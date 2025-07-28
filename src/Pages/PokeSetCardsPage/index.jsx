@@ -37,7 +37,7 @@ function PokeSetCardsPage() {
                 {setCards.map((setCard) => {
                     return (
                         <>
-                                <PokeSetCards cardID={setCard.id} setCardName={setCard.name} setCardImage={setCard.image} />
+                           <PokeSetCards cardID={setCard.id} setCardName={setCard.name} setCardImage={setCard.image} />
                         </>
                     )
                 })}

@@ -13,8 +13,10 @@ function PokeSetCards(props) {
     return(
         <>
             <div className="tcg-card">
-                <img src={logoURL} alt="" className="card-img" />
-                <div>Card Name: 
+                <Link to={oneCardID} >
+                    <img src={logoURL} alt="" className="card-img" />
+                </Link>
+                <div>
                     <Link to={oneCardID} >
                         {props.setCardName}
                     </Link>
